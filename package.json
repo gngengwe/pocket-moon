@@ -7,15 +7,15 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "pocketmoon serve",
+    "dev": "node packages/cli/dist/index.js serve",
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "format": "npm run format --workspaces --if-present",
     "postinstall": "npm run build --workspace @pocketmoon/shared && npm run build --workspace @pocketmoon/cli && npm run demo:generate --workspace @pocketmoon/cli",
-    "pocketmoon:init": "pocketmoon init",
-    "pocketmoon:add": "pocketmoon add",
-    "pocketmoon:build": "pocketmoon build",
-    "pocketmoon:serve": "pocketmoon serve",
-    "pocketmoon:export": "pocketmoon export"
+    "pocketmoon:init": "node packages/cli/dist/index.js init",
+    "pocketmoon:add": "node packages/cli/dist/index.js add",
+    "pocketmoon:build": "node packages/cli/dist/index.js build",
+    "pocketmoon:serve": "node packages/cli/dist/index.js serve",
+    "pocketmoon:export": "node packages/cli/dist/index.js export"
   }
 }

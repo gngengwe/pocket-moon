@@ -30,8 +30,11 @@ jobs:
       - name: Install deps
         run: npm ci
 
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Build static export
-        run: npm run pocketmoon:export
+        run: node packages/cli/dist/index.js export
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
