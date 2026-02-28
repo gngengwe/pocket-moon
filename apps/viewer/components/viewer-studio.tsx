@@ -157,48 +157,58 @@ export function ViewerStudio() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-[1300px] flex-col gap-4 px-4 py-4 md:px-6">
-      <header className="rounded-2xl bg-card/90 p-4 shadow-soft backdrop-blur-sm">
-        <div className="flex flex-wrap items-center gap-3 text-sm text-muted">
-          <strong className="mr-auto text-base text-ink">{manifest.title}</strong>
-          <span>
-            {pages.length ? index + 1 : 0} / {pages.length}
-          </span>
-          <select
-            className="rounded-lg border border-slate-200 bg-white px-2 py-1"
-            value={transition}
-            onChange={(event) => setTransition(event.target.value as TransitionName)}
-          >
-            {transitionOptions.map((item) => (
-              <option value={item} key={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-          <button className="rounded-lg border border-slate-200 bg-white px-2 py-1" onClick={() => setDemoMode((value) => !value)}>
-            Demo {demoMode ? "on" : "off"}
-          </button>
-          <button className="rounded-lg border border-slate-200 bg-white px-2 py-1" onClick={() => setReducedMotion((value) => !value)}>
-            Reduced motion {reducedMotion ? "on" : "off"}
-          </button>
-          <button className="rounded-lg border border-slate-200 bg-white px-2 py-1" onClick={() => setAutoAdvance((value) => !value)}>
-            Auto-advance {autoAdvance ? "pause" : "play"}
-          </button>
-          <button className="rounded-lg border border-slate-200 bg-white px-2 py-1" onClick={() => setZoom((z) => Math.min(2.5, z + 0.15))}>
-            +
-          </button>
-          <button className="rounded-lg border border-slate-200 bg-white px-2 py-1" onClick={() => setZoom((z) => Math.max(0.5, z - 0.15))}>
-            -
-          </button>
-          <button className="rounded-lg border border-slate-200 bg-white px-2 py-1" onClick={() => setZoom(1)}>
-            fit
-          </button>
+    <main className="mx-auto flex min-h-screen max-w-[1360px] flex-col gap-3 px-3 py-3 md:gap-4 md:px-6 md:py-4">
+      <header className="rounded-2xl bg-card/90 p-3 shadow-soft backdrop-blur-sm md:p-4">
+        <div className="grid grid-cols-1 gap-3 text-sm text-muted md:flex md:flex-wrap md:items-center">
+          <div className="flex items-center justify-between gap-3">
+            <strong className="text-base text-ink md:mr-auto">{manifest.title}</strong>
+            <span className="rounded-md bg-white px-2 py-1 text-xs md:text-sm">
+              {pages.length ? index + 1 : 0} / {pages.length}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:gap-3">
+            <select
+              className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1"
+              value={transition}
+              onChange={(event) => setTransition(event.target.value as TransitionName)}
+            >
+              {transitionOptions.map((item) => (
+                <option value={item} key={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setDemoMode((value) => !value)}>
+              Demo {demoMode ? "on" : "off"}
+            </button>
+            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setReducedMotion((value) => !value)}>
+              Motion {reducedMotion ? "off" : "on"}
+            </button>
+            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setAutoAdvance((value) => !value)}>
+              Auto {autoAdvance ? "pause" : "play"}
+            </button>
+            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setZoom((z) => Math.min(2.5, z + 0.15))}>
+              Zoom +
+            </button>
+            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setZoom((z) => Math.max(0.5, z - 0.15))}>
+              Zoom -
+            </button>
+            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setZoom(1)}>
+              Fit
+            </button>
+          </div>
+
+          <span className="hidden text-xs text-slate-500 md:inline">Keys: left, right, space</span>
         </div>
       </header>
 
-      <section className="grid flex-1 grid-rows-[1fr_auto] gap-4">
-        <div className="relative flex items-center justify-center overflow-hidden rounded-2xl bg-surface p-4 shadow-soft" {...swipeHandlers}>
-          <div className="relative w-full max-w-[880px]">
+      <section className="grid flex-1 grid-rows-[1fr_auto] gap-3 md:gap-4">
+        <div
+          className="relative flex min-h-[58vh] items-center justify-center overflow-hidden rounded-2xl bg-surface p-2 shadow-soft sm:p-3 md:min-h-[62vh] md:p-4"
+          {...swipeHandlers}
+        >
+          <div className="relative w-full max-w-[920px]">
             <div style={{ aspectRatio: `${frame.width}/${frame.height}` }} className="relative overflow-hidden rounded-xl bg-white">
               <AnimatePresence mode="wait">
                 {currentPage ? (
@@ -220,7 +230,7 @@ export function ViewerStudio() {
               <button
                 type="button"
                 aria-label="Previous page"
-                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 text-xl leading-none text-ink shadow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-35"
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 text-lg leading-none text-ink shadow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-35 md:left-3 md:text-xl"
                 onClick={goPrev}
                 disabled={atStart}
               >
@@ -229,7 +239,7 @@ export function ViewerStudio() {
               <button
                 type="button"
                 aria-label="Next page"
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 text-xl leading-none text-ink shadow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-35"
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 text-lg leading-none text-ink shadow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-35 md:right-3 md:text-xl"
                 onClick={goNext}
                 disabled={atEnd}
               >
@@ -240,7 +250,7 @@ export function ViewerStudio() {
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="absolute bottom-4 left-1/2 max-w-[80%] -translate-x-1/2 rounded-full bg-white/92 px-4 py-2 text-center text-sm text-ink shadow"
+                className="absolute bottom-3 left-1/2 max-w-[86%] -translate-x-1/2 rounded-full bg-white/92 px-3 py-2 text-center text-xs text-ink shadow sm:text-sm md:bottom-4 md:max-w-[80%] md:px-4"
               >
                 {caption}
               </motion.div>
@@ -248,12 +258,12 @@ export function ViewerStudio() {
           </div>
         </div>
 
-        <div className="rounded-2xl bg-card/85 p-3 shadow-soft backdrop-blur-sm">
-          <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="rounded-2xl bg-card/85 p-2 shadow-soft backdrop-blur-sm md:p-3">
+          <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 md:pb-2">
             {pages.map((page, pageIndex) => (
               <button
                 key={page.id}
-                className={`relative h-[106px] w-[80px] shrink-0 overflow-hidden rounded-lg border ${
+                className={`relative h-[96px] w-[72px] shrink-0 snap-start overflow-hidden rounded-lg border transition md:h-[106px] md:w-[80px] ${
                   pageIndex === index ? "border-accent" : "border-slate-200"
                 }`}
                 onClick={() => setIndex(pageIndex)}
