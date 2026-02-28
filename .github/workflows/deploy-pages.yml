@@ -35,6 +35,8 @@ jobs:
 
       - name: Build static export
         run: node packages/cli/dist/index.js export
+        env:
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

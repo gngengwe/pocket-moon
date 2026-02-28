@@ -6,6 +6,14 @@ import type { TouchEvent } from "react";
 import type { PocketMoonManifest, TransitionName } from "@pocketmoon/shared";
 
 const transitionOptions: TransitionName[] = ["fade", "slide", "flip", "drift"];
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function withBasePath(assetPath: string): string {
+  if (!assetPath.startsWith("/")) {
+    return `${basePath}/${assetPath}`;
+  }
+  return `${basePath}${assetPath}`;
+}
 
 function variants(name: TransitionName, reduced: boolean) {
   if (reduced) {
@@ -37,9 +45,9 @@ function variants(name: TransitionName, reduced: boolean) {
 }
 
 async function loadManifest(): Promise<PocketMoonManifest> {
-  const response = await fetch("/manifest.json", { cache: "no-store" });
+  const response = await fetch(withBasePath("/manifest.json"), { cache: "no-store" });
   if (!response.ok) {
-    throw new Error("Unable to load /manifest.json. Run `pocketmoon build` first.");
+    throw new Error("Unable to load manifest.json. Run `pocketmoon build` first.");
   }
   return (await response.json()) as PocketMoonManifest;
 }
@@ -129,7 +137,7 @@ export function ViewerStudio() {
     const preload = [next, prev].filter(Boolean);
     for (const item of preload) {
       const image = new Image();
-      image.src = `/${item!.image.src}`;
+      image.src = withBasePath(item!.image.src);
     }
   }, [index, manifest, pages]);
 
@@ -196,7 +204,7 @@ export function ViewerStudio() {
                 {currentPage ? (
                   <motion.img
                     key={currentPage.id}
-                    src={`/${currentPage.image.src}`}
+                    src={withBasePath(currentPage.image.src)}
                     alt={`Page ${currentPage.order}`}
                     loading="lazy"
                     className="h-full w-full object-contain"
@@ -216,7 +224,7 @@ export function ViewerStudio() {
                 onClick={goPrev}
                 disabled={atStart}
               >
-                ‹
+                {"<"}
               </button>
               <button
                 type="button"
@@ -225,7 +233,7 @@ export function ViewerStudio() {
                 onClick={goNext}
                 disabled={atEnd}
               >
-                ›
+                {">"}
               </button>
             </div>
             {demoMode && caption ? (
@@ -252,7 +260,7 @@ export function ViewerStudio() {
                 aria-label={`Go to page ${page.order}`}
               >
                 <img
-                  src={`/${page.thumb.src}`}
+                  src={withBasePath(page.thumb.src)}
                   alt={`Thumbnail ${page.order}`}
                   loading="lazy"
                   className="h-full w-full object-cover"
