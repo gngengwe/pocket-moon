@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Pocket Moon",
-  "generatedAt": "2026-02-28T22:01:16.855Z",
+  "generatedAt": "2026-02-28T22:33:35.768Z",
   "frame": {
     "width": 1080,
     "height": 1440,
@@ -385,6 +385,27 @@
         "height": 240
       },
       "meta": {}
+    },
+    {
+      "id": "p0019",
+      "order": 19,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr19.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0019.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0019.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
     }
   ],
   "demo": {
@@ -407,7 +428,8 @@
       "p0015": "Pocket Moon demo: page 15",
       "p0016": "Pocket Moon demo: page 16",
       "p0017": "Pocket Moon demo: page 17",
-      "p0018": "Pocket Moon demo: page 18"
+      "p0018": "Pocket Moon demo: page 18",
+      "p0019": "Pocket Moon demo: page 19"
     }
   }
 }

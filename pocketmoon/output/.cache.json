@@ -594,6 +594,20 @@
           "thumbCacheFile": "thumbs\\7032302e706e67-1.png"
         }
       ]
+    },
+    "pr19.png": {
+      "fingerprint": "45433:1772316391899.4443:0d807268d20cd661c497552b678fd86ed4e91c0b4d260a639f9222ab4c93d791",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231392e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231392e706e67-1.png"
+        }
+      ]
     }
   }
 }

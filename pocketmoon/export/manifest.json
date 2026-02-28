@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Pocket Moon",
-  "generatedAt": "2026-02-28T10:12:42.056Z",
+  "generatedAt": "2026-02-28T22:33:35.768Z",
   "frame": {
     "width": 1080,
     "height": 1440,
@@ -14,7 +14,7 @@
       "type": "image",
       "source": {
         "kind": "image",
-        "file": "01-title-card.png",
+        "file": "pr01.png",
         "page": null
       },
       "image": {
@@ -35,7 +35,7 @@
       "type": "image",
       "source": {
         "kind": "image",
-        "file": "02-shapes.png",
+        "file": "pr02.png",
         "page": null
       },
       "image": {
@@ -56,7 +56,7 @@
       "type": "image",
       "source": {
         "kind": "image",
-        "file": "03-gradient.png",
+        "file": "pr03.png",
         "page": null
       },
       "image": {
@@ -77,7 +77,7 @@
       "type": "image",
       "source": {
         "kind": "image",
-        "file": "04-minimal.png",
+        "file": "pr04.png",
         "page": null
       },
       "image": {
@@ -97,9 +97,9 @@
       "order": 5,
       "type": "image",
       "source": {
-        "kind": "pdf",
-        "file": "05-demo-book.pdf",
-        "page": 1
+        "kind": "image",
+        "file": "pr05.png",
+        "page": null
       },
       "image": {
         "src": "pages/p0005.png",
@@ -118,9 +118,9 @@
       "order": 6,
       "type": "image",
       "source": {
-        "kind": "pdf",
-        "file": "05-demo-book.pdf",
-        "page": 2
+        "kind": "image",
+        "file": "pr06.png",
+        "page": null
       },
       "image": {
         "src": "pages/p0006.png",
@@ -139,9 +139,9 @@
       "order": 7,
       "type": "image",
       "source": {
-        "kind": "pdf",
-        "file": "05-demo-book.pdf",
-        "page": 3
+        "kind": "image",
+        "file": "pr07.png",
+        "page": null
       },
       "image": {
         "src": "pages/p0007.png",
@@ -150,6 +150,258 @@
       },
       "thumb": {
         "src": "thumbs/p0007.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0008",
+      "order": 8,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr08.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0008.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0008.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0009",
+      "order": 9,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr09.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0009.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0009.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0010",
+      "order": 10,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr10.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0010.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0010.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0011",
+      "order": 11,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr11.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0011.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0011.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0012",
+      "order": 12,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr12.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0012.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0012.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0013",
+      "order": 13,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr13.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0013.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0013.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0014",
+      "order": 14,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr14.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0014.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0014.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0015",
+      "order": 15,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr15.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0015.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0015.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0016",
+      "order": 16,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr16.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0016.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0016.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0017",
+      "order": 17,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr17.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0017.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0017.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0018",
+      "order": 18,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr18.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0018.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0018.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0019",
+      "order": 19,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "pr19.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0019.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0019.png",
         "width": 180,
         "height": 240
       },
@@ -165,7 +417,19 @@
       "p0004": "Pocket Moon demo: page 4",
       "p0005": "Pocket Moon demo: page 5",
       "p0006": "Pocket Moon demo: page 6",
-      "p0007": "Pocket Moon demo: page 7"
+      "p0007": "Pocket Moon demo: page 7",
+      "p0008": "Pocket Moon demo: page 8",
+      "p0009": "Pocket Moon demo: page 9",
+      "p0010": "Pocket Moon demo: page 10",
+      "p0011": "Pocket Moon demo: page 11",
+      "p0012": "Pocket Moon demo: page 12",
+      "p0013": "Pocket Moon demo: page 13",
+      "p0014": "Pocket Moon demo: page 14",
+      "p0015": "Pocket Moon demo: page 15",
+      "p0016": "Pocket Moon demo: page 16",
+      "p0017": "Pocket Moon demo: page 17",
+      "p0018": "Pocket Moon demo: page 18",
+      "p0019": "Pocket Moon demo: page 19"
     }
   }
 }
