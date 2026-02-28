@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "title": "Pocket Moon",
+  "generatedAt": "2026-02-28T10:12:42.056Z",
+  "frame": {
+    "width": 1080,
+    "height": 1440,
+    "background": "#ffffff"
+  },
+  "pages": [
+    {
+      "id": "p0001",
+      "order": 1,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "01-title-card.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0001.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0001.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0002",
+      "order": 2,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "02-shapes.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0002.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0002.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0003",
+      "order": 3,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "03-gradient.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0003.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0003.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0004",
+      "order": 4,
+      "type": "image",
+      "source": {
+        "kind": "image",
+        "file": "04-minimal.png",
+        "page": null
+      },
+      "image": {
+        "src": "pages/p0004.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0004.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0005",
+      "order": 5,
+      "type": "image",
+      "source": {
+        "kind": "pdf",
+        "file": "05-demo-book.pdf",
+        "page": 1
+      },
+      "image": {
+        "src": "pages/p0005.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0005.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0006",
+      "order": 6,
+      "type": "image",
+      "source": {
+        "kind": "pdf",
+        "file": "05-demo-book.pdf",
+        "page": 2
+      },
+      "image": {
+        "src": "pages/p0006.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0006.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    },
+    {
+      "id": "p0007",
+      "order": 7,
+      "type": "image",
+      "source": {
+        "kind": "pdf",
+        "file": "05-demo-book.pdf",
+        "page": 3
+      },
+      "image": {
+        "src": "pages/p0007.png",
+        "width": 1080,
+        "height": 1440
+      },
+      "thumb": {
+        "src": "thumbs/p0007.png",
+        "width": 180,
+        "height": 240
+      },
+      "meta": {}
+    }
+  ],
+  "demo": {
+    "mode": true,
+    "captions": {
+      "p0001": "Pocket Moon demo: page 1",
+      "p0002": "Pocket Moon demo: page 2",
+      "p0003": "Pocket Moon demo: page 3",
+      "p0004": "Pocket Moon demo: page 4",
+      "p0005": "Pocket Moon demo: page 5",
+      "p0006": "Pocket Moon demo: page 6",
+      "p0007": "Pocket Moon demo: page 7"
+    }
+  }
+}

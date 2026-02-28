@@ -1,0 +1,599 @@
+{
+  "version": 1,
+  "entries": {
+    "01-title-card.png": {
+      "fingerprint": "83373:1772273314436:6c7110f0081323e2025699931b89c1e73f145dc9c3a4dda4eca9a9e2f98bcc88",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30312d7469746c652d636172642e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30312d7469746c652d636172642e706e67-1.png"
+        }
+      ]
+    },
+    "02-shapes.png": {
+      "fingerprint": "78709:1772273314595:6a91885f0f24955aa3c34d7e41b56b5501b3c8414c0c9b3e95348ca11fb5506a",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30322d7368617065732e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30322d7368617065732e706e67-1.png"
+        }
+      ]
+    },
+    "03-gradient.png": {
+      "fingerprint": "84713:1772273314677:d2c83fb1b5d02e2affada9329c84b58be0fbc4c49490d537ea629ed59a2ba522",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30332d6772616469656e742e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30332d6772616469656e742e706e67-1.png"
+        }
+      ]
+    },
+    "04-minimal.png": {
+      "fingerprint": "64598:1772273314768:5fbddd1a4ac03af211acbcd050faf247dcab8eb3c6da6c332de01776923731fb",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30342d6d696e696d616c2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30342d6d696e696d616c2e706e67-1.png"
+        }
+      ]
+    },
+    "05-demo-book.pdf": {
+      "fingerprint": "1953:1772273314942.3423:10782c3a9b78294556598740b0cc0981616afd546c7782e01a5527992e127420",
+      "kind": "pdf",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 3,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30352d64656d6f2d626f6f6b2e706466-1.png",
+          "thumbCacheFile": "thumbs\\30352d64656d6f2d626f6f6b2e706466-1.png"
+        },
+        {
+          "index": 2,
+          "pageCacheFile": "pages\\30352d64656d6f2d626f6f6b2e706466-2.png",
+          "thumbCacheFile": "thumbs\\30352d64656d6f2d626f6f6b2e706466-2.png"
+        },
+        {
+          "index": 3,
+          "pageCacheFile": "pages\\30352d64656d6f2d626f6f6b2e706466-3.png",
+          "thumbCacheFile": "thumbs\\30352d64656d6f2d626f6f6b2e706466-3.png"
+        }
+      ]
+    },
+    "01_pocket_moon.png": {
+      "fingerprint": "2879383:1772274719496.0298:5e68bead2fc8f04f5658a975a9b9936bab419e2974818813fec4e95e9f5a64e6",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30315f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30315f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "02_pocket_moon.png": {
+      "fingerprint": "3064114:1772274722860.7722:552be5aae52482a5465c7d11ce3a14b2f86b2893438e91b28a1e164e61d7a0ea",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30325f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30325f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "03_pocket_moon.png": {
+      "fingerprint": "3349157:1772274725695.855:fe6f5a0b37d38e2debcce1f3894d81e6f59c4be5b5deae278750b01437326ae9",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30335f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30335f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "04_pocket_moon.png": {
+      "fingerprint": "3405266:1772274736433.2595:45545749890df0d459535944c0b10615e2dde8664847eca61513365de8b4c857",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30345f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30345f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "05_pocket_moon.png": {
+      "fingerprint": "3617135:1772274861455.358:0e8789f019fd56efa68597f7214002236fb7da1b1e09ffda2eb4d7ce30bab083",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30355f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30355f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "06_pocket_moon.png": {
+      "fingerprint": "3734908:1772274868448.6484:a75416e9d8f245f368e396db46f695fe221a1e3177c64ac5f8ddbd7577f84f5e",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30365f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30365f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "07_pocket_moon.png": {
+      "fingerprint": "3245344:1772274874508.256:fd3dd48078bdea6a288c546e2f12f32e09ee365f4330ae2b9bbe326d43acc74a",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30375f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30375f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "08_pocket_moon.png": {
+      "fingerprint": "3431357:1772274877132.9136:75daab69d3668f7cf24ae63468a6acfce9e5da070fc289e4f9bfe342e39fa7fd",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30385f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30385f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "09_pocket_moon.png": {
+      "fingerprint": "3184242:1772274889103.4243:14dc5c87cea97828e7f91a1ea4e61f7ff5de2882e3d2d3a6dcecd013a88f2e0d",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\30395f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\30395f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "10_pocket_moon.png": {
+      "fingerprint": "3184242:1772275445344.3296:14dc5c87cea97828e7f91a1ea4e61f7ff5de2882e3d2d3a6dcecd013a88f2e0d",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\31305f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\31305f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "11_pocket_moon.png": {
+      "fingerprint": "3205465:1772275450103.7712:5a0ccf19f5ad49e8815964aa25d267d6c737e04ff517111b45be4f4ae07e1c8b",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\31315f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\31315f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "12_pocket_moon.png": {
+      "fingerprint": "3163130:1772275453286.349:1e4ed438d59fae6efd0ab0f9780b2968c21a553405c4204b0e0e02a82cb214d0",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\31325f706f636b65745f6d6f6f6e2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\31325f706f636b65745f6d6f6f6e2e706e67-1.png"
+        }
+      ]
+    },
+    "archive/01-title-card.png": {
+      "fingerprint": "83373:1772273314436:6c7110f0081323e2025699931b89c1e73f145dc9c3a4dda4eca9a9e2f98bcc88",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\617263686976652f30312d7469746c652d636172642e706e67-1.png",
+          "thumbCacheFile": "thumbs\\617263686976652f30312d7469746c652d636172642e706e67-1.png"
+        }
+      ]
+    },
+    "archive/02-shapes.png": {
+      "fingerprint": "78709:1772273314595:6a91885f0f24955aa3c34d7e41b56b5501b3c8414c0c9b3e95348ca11fb5506a",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\617263686976652f30322d7368617065732e706e67-1.png",
+          "thumbCacheFile": "thumbs\\617263686976652f30322d7368617065732e706e67-1.png"
+        }
+      ]
+    },
+    "archive/03-gradient.png": {
+      "fingerprint": "84713:1772273314677:d2c83fb1b5d02e2affada9329c84b58be0fbc4c49490d537ea629ed59a2ba522",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\617263686976652f30332d6772616469656e742e706e67-1.png",
+          "thumbCacheFile": "thumbs\\617263686976652f30332d6772616469656e742e706e67-1.png"
+        }
+      ]
+    },
+    "archive/04-minimal.png": {
+      "fingerprint": "64598:1772273314768:5fbddd1a4ac03af211acbcd050faf247dcab8eb3c6da6c332de01776923731fb",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\617263686976652f30342d6d696e696d616c2e706e67-1.png",
+          "thumbCacheFile": "thumbs\\617263686976652f30342d6d696e696d616c2e706e67-1.png"
+        }
+      ]
+    },
+    "archive/05-demo-book.pdf": {
+      "fingerprint": "1953:1772273314942.3423:10782c3a9b78294556598740b0cc0981616afd546c7782e01a5527992e127420",
+      "kind": "pdf",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 3,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\617263686976652f30352d64656d6f2d626f6f6b2e706466-1.png",
+          "thumbCacheFile": "thumbs\\617263686976652f30352d64656d6f2d626f6f6b2e706466-1.png"
+        },
+        {
+          "index": 2,
+          "pageCacheFile": "pages\\617263686976652f30352d64656d6f2d626f6f6b2e706466-2.png",
+          "thumbCacheFile": "thumbs\\617263686976652f30352d64656d6f2d626f6f6b2e706466-2.png"
+        },
+        {
+          "index": 3,
+          "pageCacheFile": "pages\\617263686976652f30352d64656d6f2d626f6f6b2e706466-3.png",
+          "thumbCacheFile": "thumbs\\617263686976652f30352d64656d6f2d626f6f6b2e706466-3.png"
+        }
+      ]
+    },
+    "pr01.png": {
+      "fingerprint": "1273246:1772276255360.361:50e0d0a513386417405f08216e711380897fdcb584c33fe0463df7fb6c6e7a40",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230312e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230312e706e67-1.png"
+        }
+      ]
+    },
+    "pr02.png": {
+      "fingerprint": "2879383:1772274719496.0298:5e68bead2fc8f04f5658a975a9b9936bab419e2974818813fec4e95e9f5a64e6",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230322e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230322e706e67-1.png"
+        }
+      ]
+    },
+    "pr03.png": {
+      "fingerprint": "3064114:1772274722860.7722:552be5aae52482a5465c7d11ce3a14b2f86b2893438e91b28a1e164e61d7a0ea",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230332e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230332e706e67-1.png"
+        }
+      ]
+    },
+    "pr04.png": {
+      "fingerprint": "3349157:1772274725695.855:fe6f5a0b37d38e2debcce1f3894d81e6f59c4be5b5deae278750b01437326ae9",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230342e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230342e706e67-1.png"
+        }
+      ]
+    },
+    "pr05.png": {
+      "fingerprint": "3405266:1772274736433.2595:45545749890df0d459535944c0b10615e2dde8664847eca61513365de8b4c857",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230352e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230352e706e67-1.png"
+        }
+      ]
+    },
+    "pr06.png": {
+      "fingerprint": "3617135:1772274861455.358:0e8789f019fd56efa68597f7214002236fb7da1b1e09ffda2eb4d7ce30bab083",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230362e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230362e706e67-1.png"
+        }
+      ]
+    },
+    "pr07.png": {
+      "fingerprint": "3245344:1772274874508.256:fd3dd48078bdea6a288c546e2f12f32e09ee365f4330ae2b9bbe326d43acc74a",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230372e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230372e706e67-1.png"
+        }
+      ]
+    },
+    "pr08.png": {
+      "fingerprint": "2924439:1772273024388.9187:25b283eebc70cecc10673864265915e3bea24d14db8dce21d6d5de207f0ee386",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230382e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230382e706e67-1.png"
+        }
+      ]
+    },
+    "pr09.png": {
+      "fingerprint": "3431357:1772274877132.9136:75daab69d3668f7cf24ae63468a6acfce9e5da070fc289e4f9bfe342e39fa7fd",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707230392e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707230392e706e67-1.png"
+        }
+      ]
+    },
+    "pr10.png": {
+      "fingerprint": "3270336:1772313755888.9158:fbdabad5e6ef94163e98a50cf110858453f69be5bec2813a173796b0224d6dc2",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231302e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231302e706e67-1.png"
+        }
+      ]
+    },
+    "pr11.png": {
+      "fingerprint": "2800693:1772313593532.7312:8c83454a0962a837099f9f742ad78a3f2fa21955d78fb9943522027522c66ec8",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231312e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231312e706e67-1.png"
+        }
+      ]
+    },
+    "pr12.png": {
+      "fingerprint": "3263512:1772311398957.0432:ba2d3285928b5e81a905661799fdb01332c3e4810fe509b2d07f8a51ae30e848",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231322e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231322e706e67-1.png"
+        }
+      ]
+    },
+    "pr13.png": {
+      "fingerprint": "3375050:1772310964237.023:e14d22bd2273366fe9a1d64fa892618fb4b2a84f3a34f8486583a9fb3ede12fa",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231332e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231332e706e67-1.png"
+        }
+      ]
+    },
+    "pr14.png": {
+      "fingerprint": "3184242:1772274889103.4243:14dc5c87cea97828e7f91a1ea4e61f7ff5de2882e3d2d3a6dcecd013a88f2e0d",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231342e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231342e706e67-1.png"
+        }
+      ]
+    },
+    "pr15.png": {
+      "fingerprint": "3205465:1772275450103.7712:5a0ccf19f5ad49e8815964aa25d267d6c737e04ff517111b45be4f4ae07e1c8b",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231352e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231352e706e67-1.png"
+        }
+      ]
+    },
+    "pr16.png": {
+      "fingerprint": "3163130:1772275453286.349:1e4ed438d59fae6efd0ab0f9780b2968c21a553405c4204b0e0e02a82cb214d0",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231362e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231362e706e67-1.png"
+        }
+      ]
+    },
+    "pr17.png": {
+      "fingerprint": "3473494:1772276047748.6777:02787a4d357d72d64490349e31cd8cdc22fcecd8393ac339620fb631ba276b04",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231372e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231372e706e67-1.png"
+        }
+      ]
+    },
+    "pr18.png": {
+      "fingerprint": "1360147:1772276243219.2803:86bb989ec07b7a8369c755721406f7b65b1b892380e2bbe823bfe63ce98a9ece",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\707231382e706e67-1.png",
+          "thumbCacheFile": "thumbs\\707231382e706e67-1.png"
+        }
+      ]
+    },
+    "p20.png": {
+      "fingerprint": "45433:1772316391899.4443:0d807268d20cd661c497552b678fd86ed4e91c0b4d260a639f9222ab4c93d791",
+      "kind": "image",
+      "frameKey": "1080x1440:#ffffff",
+      "thumbEdge": 240,
+      "pageCount": 1,
+      "pages": [
+        {
+          "index": 1,
+          "pageCacheFile": "pages\\7032302e706e67-1.png",
+          "thumbCacheFile": "thumbs\\7032302e706e67-1.png"
+        }
+      ]
+    }
+  }
+}

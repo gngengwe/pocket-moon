@@ -1,0 +1,21 @@
+{
+  "name": "pocket-moon",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pocketmoon serve",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "npm run format --workspaces --if-present",
+    "postinstall": "npm run build --workspace @pocketmoon/shared && npm run build --workspace @pocketmoon/cli && npm run demo:generate --workspace @pocketmoon/cli",
+    "pocketmoon:init": "pocketmoon init",
+    "pocketmoon:add": "pocketmoon add",
+    "pocketmoon:build": "pocketmoon build",
+    "pocketmoon:serve": "pocketmoon serve",
+    "pocketmoon:export": "pocketmoon export"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "inputDir": "./pocketmoon/input",
+  "outputDir": "./pocketmoon/output",
+  "exportDir": "./pocketmoon/export",
+  "frame": {
+    "width": 1080,
+    "height": 1440,
+    "background": "#ffffff"
+  },
+  "thumbnail": {
+    "longEdge": 240
+  },
+  "transitions": {
+    "default": "drift",
+    "available": [
+      "fade",
+      "slide",
+      "flip",
+      "drift"
+    ]
+  },
+  "demoMode": true
+}
