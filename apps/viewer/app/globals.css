@@ -9,8 +9,10 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at 18% 12%, #ffffff 0%, #f3f7ff 38%, #eef3fb 100%);
-  color: #1b2533;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(254, 251, 244, 0.95) 0%, rgba(228, 235, 255, 0.9) 36%, rgba(171, 186, 228, 0.9) 64%, rgba(100, 116, 176, 0.94) 100%),
+    linear-gradient(160deg, #e6edff 0%, #c9d8f3 44%, #aabbe6 72%, #8f9fd3 100%);
+  color: #1c2a57;
   font-family: "Georgia", "Palatino Linotype", serif;
 }
 

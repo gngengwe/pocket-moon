@@ -83,6 +83,7 @@ export function ViewerStudio() {
   const [zoom, setZoom] = useState(1);
   const [demoMode, setDemoMode] = useState(true);
   const [autoAdvance, setAutoAdvance] = useState(false);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
     loadManifest()
@@ -104,6 +105,13 @@ export function ViewerStudio() {
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Enter" && !started) {
+        setStarted(true);
+        return;
+      }
+      if (!started) {
+        return;
+      }
       if (event.key === "ArrowRight" || event.key === " ") {
         event.preventDefault();
         goNext();
@@ -116,20 +124,20 @@ export function ViewerStudio() {
 
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [goNext, goPrev]);
+  }, [goNext, goPrev, started]);
 
   useEffect(() => {
-    if (!autoAdvance) {
+    if (!autoAdvance || !started) {
       return;
     }
     const timer = window.setInterval(() => {
       setIndex((value) => (value + 1) % Math.max(1, pages.length));
     }, 2500);
     return () => window.clearInterval(timer);
-  }, [autoAdvance, pages.length]);
+  }, [autoAdvance, pages.length, started]);
 
   useEffect(() => {
-    if (!manifest || !pages.length) {
+    if (!manifest || !pages.length || !started) {
       return;
     }
     const next = pages[index + 1];
@@ -139,7 +147,7 @@ export function ViewerStudio() {
       const image = new Image();
       image.src = withBasePath(item!.image.src);
     }
-  }, [index, manifest, pages]);
+  }, [index, manifest, pages, started]);
 
   const currentPage = pages[index];
   const caption = currentPage && manifest?.demo.captions[currentPage.id];
@@ -157,129 +165,177 @@ export function ViewerStudio() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-[1360px] flex-col gap-3 px-3 py-3 md:gap-4 md:px-6 md:py-4">
-      <header className="rounded-2xl bg-card/90 p-3 shadow-soft backdrop-blur-sm md:p-4">
-        <div className="grid grid-cols-1 gap-3 text-sm text-muted md:flex md:flex-wrap md:items-center">
-          <div className="flex items-center justify-between gap-3">
-            <strong className="text-base text-ink md:mr-auto">{manifest.title}</strong>
-            <span className="rounded-md bg-white px-2 py-1 text-xs md:text-sm">
-              {pages.length ? index + 1 : 0} / {pages.length}
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:gap-3">
-            <select
-              className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1"
-              value={transition}
-              onChange={(event) => setTransition(event.target.value as TransitionName)}
-            >
-              {transitionOptions.map((item) => (
-                <option value={item} key={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setDemoMode((value) => !value)}>
-              Demo {demoMode ? "on" : "off"}
-            </button>
-            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setReducedMotion((value) => !value)}>
-              Motion {reducedMotion ? "off" : "on"}
-            </button>
-            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setAutoAdvance((value) => !value)}>
-              Auto {autoAdvance ? "pause" : "play"}
-            </button>
-            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setZoom((z) => Math.min(2.5, z + 0.15))}>
-              Zoom +
-            </button>
-            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setZoom((z) => Math.max(0.5, z - 0.15))}>
-              Zoom -
-            </button>
-            <button className="min-h-10 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm md:min-h-0 md:px-2 md:py-1" onClick={() => setZoom(1)}>
-              Fit
-            </button>
-          </div>
-
-          <span className="hidden text-xs text-slate-500 md:inline">Keys: left, right, space</span>
-        </div>
-      </header>
-
-      <section className="grid flex-1 grid-rows-[1fr_auto] gap-3 md:gap-4">
-        <div
-          className="relative flex min-h-[58vh] items-center justify-center overflow-hidden rounded-2xl bg-surface p-2 shadow-soft sm:p-3 md:min-h-[62vh] md:p-4"
-          {...swipeHandlers}
-        >
-          <div className="relative w-full max-w-[920px]">
-            <div style={{ aspectRatio: `${frame.width}/${frame.height}` }} className="relative overflow-hidden rounded-xl bg-white">
-              <AnimatePresence mode="wait">
-                {currentPage ? (
-                  <motion.img
-                    key={currentPage.id}
-                    src={withBasePath(currentPage.image.src)}
-                    alt={`Page ${currentPage.order}`}
-                    loading="lazy"
-                    className="h-full w-full object-contain"
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={motionVariants}
-                    transition={{ duration: 0.42, ease: "easeOut" }}
-                    style={{ transform: `scale(${zoom})` }}
-                  />
-                ) : null}
-              </AnimatePresence>
-              <button
-                type="button"
-                aria-label="Previous page"
-                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 text-lg leading-none text-ink shadow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-35 md:left-3 md:text-xl"
-                onClick={goPrev}
-                disabled={atStart}
-              >
-                {"<"}
-              </button>
-              <button
-                type="button"
-                aria-label="Next page"
-                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 text-lg leading-none text-ink shadow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-35 md:right-3 md:text-xl"
-                onClick={goNext}
-                disabled={atEnd}
-              >
-                {">"}
-              </button>
-            </div>
-            {demoMode && caption ? (
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="absolute bottom-3 left-1/2 max-w-[86%] -translate-x-1/2 rounded-full bg-white/92 px-3 py-2 text-center text-xs text-ink shadow sm:text-sm md:bottom-4 md:max-w-[80%] md:px-4"
-              >
-                {caption}
-              </motion.div>
-            ) : null}
-          </div>
-        </div>
-
-        <div className="rounded-2xl bg-card/85 p-2 shadow-soft backdrop-blur-sm md:p-3">
-          <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 md:pb-2">
-            {pages.map((page, pageIndex) => (
-              <button
-                key={page.id}
-                className={`relative h-[96px] w-[72px] shrink-0 snap-start overflow-hidden rounded-lg border transition md:h-[106px] md:w-[80px] ${
-                  pageIndex === index ? "border-accent" : "border-slate-200"
-                }`}
-                onClick={() => setIndex(pageIndex)}
-                aria-label={`Go to page ${page.order}`}
-              >
-                <img
-                  src={withBasePath(page.thumb.src)}
-                  alt={`Thumbnail ${page.order}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
+    <main className="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col px-3 py-4 md:px-6 md:py-5">
+      <AnimatePresence>
+        {!started ? (
+          <motion.section
+            className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_30%_20%,rgba(235,238,255,0.95),rgba(176,187,227,0.86)_32%,rgba(91,107,169,0.9)_62%,rgba(33,45,93,0.95)_100%)] p-6"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.45 } }}
+          >
+            <div className="pointer-events-none absolute inset-0">
+              {[...Array(18)].map((_, i) => (
+                <motion.span
+                  key={i}
+                  className="absolute h-1.5 w-1.5 rounded-full bg-[#f7d8a2]/80"
+                  style={{ left: `${8 + (i * 5) % 84}%`, top: `${7 + ((i * 9) % 80)}%` }}
+                  animate={{ opacity: [0.2, 0.9, 0.25], scale: [1, 1.35, 1] }}
+                  transition={{ duration: 2.4 + (i % 5) * 0.4, repeat: Infinity, delay: i * 0.12 }}
                 />
+              ))}
+            </div>
+
+            <motion.div
+              className="relative z-10 w-full max-w-[560px] rounded-[28px] border border-[#f3d7aa]/45 bg-[#f6f0ea]/84 p-6 text-center shadow-[0_24px_80px_rgba(22,33,76,0.35)] backdrop-blur-sm md:p-8"
+              initial={{ opacity: 0, y: 24, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.55, ease: "easeOut" }}
+            >
+              <motion.img
+                src={withBasePath("/pocket-moon-splash.png")}
+                alt="Pocket Moon logo"
+                className="mx-auto mb-5 w-full max-w-[320px] rounded-2xl border border-[#f2d4aa]/70 shadow-[0_14px_38px_rgba(24,40,89,0.25)]"
+                animate={{ y: [0, -6, 0], scale: [1, 1.02, 1] }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <h1 className="text-2xl tracking-[0.05em] text-[#1c2a57] md:text-3xl">Pocket Moon</h1>
+              <p className="mx-auto mt-3 max-w-[42ch] text-sm text-[#304577] md:text-base">Click to start the Pocket Moon story.</p>
+              <motion.button
+                type="button"
+                className="mt-6 rounded-full border border-[#f1ce95] bg-[#f7dfb7] px-6 py-3 text-sm font-semibold tracking-[0.03em] text-[#24356a] shadow-[0_12px_26px_rgba(27,42,89,0.22)] transition hover:bg-[#f5d6a5]"
+                onClick={() => setStarted(true)}
+                whileTap={{ scale: 0.97 }}
+              >
+                Start Story
+              </motion.button>
+            </motion.div>
+          </motion.section>
+        ) : null}
+      </AnimatePresence>
+
+      <div className="mx-auto flex w-full max-w-[920px] flex-1 flex-col gap-3 md:gap-4">
+        <header className="rounded-2xl border border-[#cfd6ec] bg-card/92 p-3 shadow-soft backdrop-blur-sm md:p-4">
+          <div className="grid grid-cols-1 gap-3 text-sm text-muted">
+            <div className="flex items-center justify-between gap-3">
+              <strong className="text-base tracking-[0.02em] text-ink">{manifest.title}</strong>
+              <span className="rounded-md border border-[#d9dfef] bg-white px-2 py-1 text-xs text-[#3b4e80] md:text-sm">
+                {pages.length ? index + 1 : 0} / {pages.length}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
+              <select
+                className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]"
+                value={transition}
+                onChange={(event) => setTransition(event.target.value as TransitionName)}
+              >
+                {transitionOptions.map((item) => (
+                  <option value={item} key={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+              <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setDemoMode((value) => !value)}>
+                Demo {demoMode ? "on" : "off"}
               </button>
-            ))}
+              <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setReducedMotion((value) => !value)}>
+                Motion {reducedMotion ? "off" : "on"}
+              </button>
+              <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setAutoAdvance((value) => !value)}>
+                Auto {autoAdvance ? "pause" : "play"}
+              </button>
+              <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setZoom((z) => Math.min(2.5, z + 0.15))}>
+                Zoom +
+              </button>
+              <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setZoom((z) => Math.max(0.5, z - 0.15))}>
+                Zoom -
+              </button>
+              <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setZoom(1)}>
+                Fit
+              </button>
+              <span className="flex items-center text-xs text-[#4f6091]">Keys: left, right, space</span>
+            </div>
           </div>
-        </div>
-      </section>
+        </header>
+
+        <section className="grid flex-1 grid-rows-[1fr_auto] gap-3 md:gap-4">
+          <div
+            className="relative flex min-h-[58vh] items-center justify-center overflow-hidden rounded-2xl border border-[#d2d9ed] bg-surface p-2 shadow-soft sm:p-3 md:min-h-[62vh] md:p-4"
+            {...swipeHandlers}
+          >
+            <div className="relative w-full">
+              <div style={{ aspectRatio: `${frame.width}/${frame.height}` }} className="relative overflow-hidden rounded-xl bg-white">
+                <AnimatePresence mode="wait">
+                  {currentPage ? (
+                    <motion.img
+                      key={currentPage.id}
+                      src={withBasePath(currentPage.image.src)}
+                      alt={`Page ${currentPage.order}`}
+                      loading="lazy"
+                      className="h-full w-full object-contain"
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      variants={motionVariants}
+                      transition={{ duration: 0.42, ease: "easeOut" }}
+                      style={{ transform: `scale(${zoom})` }}
+                    />
+                  ) : null}
+                </AnimatePresence>
+                <button
+                  type="button"
+                  aria-label="Previous page"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-[#d4d9ea] bg-white/95 px-3 py-2 text-lg leading-none text-[#1f2f5f] shadow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-35 md:left-3 md:text-xl"
+                  onClick={goPrev}
+                  disabled={atStart}
+                >
+                  {"<"}
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next page"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-[#d4d9ea] bg-white/95 px-3 py-2 text-lg leading-none text-[#1f2f5f] shadow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-35 md:right-3 md:text-xl"
+                  onClick={goNext}
+                  disabled={atEnd}
+                >
+                  {">"}
+                </button>
+              </div>
+              {demoMode && caption ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute bottom-3 left-1/2 max-w-[86%] -translate-x-1/2 rounded-full border border-[#f1d4a9] bg-[#fffbf4]/95 px-3 py-2 text-center text-xs text-[#2d3d72] shadow sm:text-sm md:bottom-4 md:max-w-[80%] md:px-4"
+                >
+                  {caption}
+                </motion.div>
+              ) : null}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-[#d2d8ed] bg-card/88 p-2 shadow-soft backdrop-blur-sm md:p-3">
+            <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 md:pb-2">
+              {pages.map((page, pageIndex) => (
+                <button
+                  key={page.id}
+                  className={`relative h-[96px] w-[72px] shrink-0 snap-start overflow-hidden rounded-lg border transition md:h-[106px] md:w-[80px] ${
+                    pageIndex === index ? "border-accent" : "border-[#d7ddef]"
+                  }`}
+                  onClick={() => setIndex(pageIndex)}
+                  aria-label={`Go to page ${page.order}`}
+                >
+                  <img
+                    src={withBasePath(page.thumb.src)}
+                    alt={`Thumbnail ${page.order}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
