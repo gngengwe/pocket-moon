@@ -186,24 +186,12 @@ export function ViewerStudio() {
       <AnimatePresence>
         {!started ? (
           <motion.section
-            className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_30%_20%,rgba(235,238,255,0.95),rgba(176,187,227,0.86)_32%,rgba(91,107,169,0.9)_62%,rgba(33,45,93,0.95)_100%)] p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_25%_18%,rgba(243,246,255,0.98),rgba(207,218,247,0.92)_48%,rgba(162,178,223,0.94)_100%)] p-6"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.45 } }}
           >
-            <div className="pointer-events-none absolute inset-0">
-              {[...Array(18)].map((_, i) => (
-                <motion.span
-                  key={i}
-                  className="absolute h-1.5 w-1.5 rounded-full bg-[#f7d8a2]/80"
-                  style={{ left: `${8 + (i * 5) % 84}%`, top: `${7 + ((i * 9) % 80)}%` }}
-                  animate={{ opacity: [0.2, 0.9, 0.25], scale: [1, 1.35, 1] }}
-                  transition={{ duration: 2.4 + (i % 5) * 0.4, repeat: Infinity, delay: i * 0.12 }}
-                />
-              ))}
-            </div>
-
             <motion.div
-              className="relative z-10 w-full max-w-[560px] rounded-[28px] border border-[#f3d7aa]/45 bg-[#f6f0ea]/84 p-6 text-center shadow-[0_24px_80px_rgba(22,33,76,0.35)] backdrop-blur-sm md:p-8"
+              className="relative z-10 w-full max-w-[560px] rounded-[28px] border border-[#d6def3] bg-[#fbfdff]/92 p-6 text-center shadow-[0_24px_80px_rgba(52,70,128,0.22)] backdrop-blur-sm md:p-8"
               initial={{ opacity: 0, y: 24, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.55, ease: "easeOut" }}
@@ -211,15 +199,15 @@ export function ViewerStudio() {
               <motion.img
                 src={withBasePath("/pocket-moon-splash.png")}
                 alt="Pocket Moon logo"
-                className="mx-auto mb-5 w-full max-w-[320px] rounded-2xl border border-[#f2d4aa]/70 shadow-[0_14px_38px_rgba(24,40,89,0.25)]"
+                className="mx-auto mb-5 w-full max-w-[320px] rounded-2xl border border-[#d8e0f7] shadow-[0_14px_38px_rgba(37,58,118,0.22)]"
                 animate={{ y: [0, -6, 0], scale: [1, 1.02, 1] }}
                 transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
               />
               <h1 className="text-2xl tracking-[0.05em] text-[#1c2a57] md:text-3xl">Pocket Moon</h1>
-              <p className="mx-auto mt-3 max-w-[42ch] text-sm text-[#304577] md:text-base">Click to start the Pocket Moon story.</p>
+              <p className="mx-auto mt-3 max-w-[42ch] text-sm text-[#3a4f86] md:text-base">Click to start the Pocket Moon story.</p>
               <motion.button
                 type="button"
-                className="mt-6 rounded-full border border-[#f1ce95] bg-[#f7dfb7] px-6 py-3 text-sm font-semibold tracking-[0.03em] text-[#24356a] shadow-[0_12px_26px_rgba(27,42,89,0.22)] transition hover:bg-[#f5d6a5]"
+                className="mt-6 rounded-full border border-[#d1dbf4] bg-[#eef3ff] px-6 py-3 text-sm font-semibold tracking-[0.03em] text-[#24356a] shadow-[0_12px_26px_rgba(48,66,121,0.2)] transition hover:bg-[#e2ebff]"
                 onClick={() => setStarted(true)}
                 whileTap={{ scale: 0.97 }}
               >
@@ -240,9 +228,9 @@ export function ViewerStudio() {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
+            <div className="flex flex-wrap items-center justify-center gap-2">
               <select
-                className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]"
+                className="min-h-10 min-w-[120px] rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]"
                 value={transition}
                 onChange={(event) => setTransition(event.target.value as TransitionName)}
               >
@@ -270,7 +258,7 @@ export function ViewerStudio() {
               <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setZoom(getDefaultZoom())}>
                 Fit
               </button>
-              <span className="flex items-center text-xs text-[#4f6091]">Keys: left, right, space</span>
+              <span className="flex items-center px-2 text-xs text-[#4f6091]">Keys: left, right, space</span>
             </div>
           </div>
         </header>
@@ -281,6 +269,9 @@ export function ViewerStudio() {
             {...swipeHandlers}
           >
             <div className="relative w-full max-w-[860px]">
+              <div className="pointer-events-none absolute -left-5 -top-6 h-24 w-24 rounded-full bg-[#f2c98c]/35 blur-2xl" />
+              <div className="pointer-events-none absolute -right-6 top-10 h-28 w-28 rounded-full bg-[#cfd8ff]/45 blur-2xl" />
+              <div className="pointer-events-none absolute -bottom-8 left-1/3 h-20 w-20 rounded-full bg-[#f5dfbd]/35 blur-2xl" />
               <div style={{ aspectRatio: `${frame.width}/${frame.height}` }} className="relative overflow-hidden rounded-xl bg-white">
                 <AnimatePresence mode="wait">
                   {currentPage ? (
