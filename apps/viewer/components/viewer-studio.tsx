@@ -95,6 +95,23 @@ export function ViewerStudio() {
       .catch((err: Error) => setError(err.message));
   }, []);
 
+  const getDefaultZoom = useCallback((): number => {
+    if (typeof window === "undefined") {
+      return 1;
+    }
+    if (window.innerWidth < 640) {
+      return 0.9;
+    }
+    if (window.innerWidth < 1280) {
+      return 1;
+    }
+    return 1.08;
+  }, []);
+
+  useEffect(() => {
+    setZoom(getDefaultZoom());
+  }, [getDefaultZoom]);
+
   const pages = manifest?.pages ?? [];
   const frame = manifest?.frame;
 
@@ -215,8 +232,8 @@ export function ViewerStudio() {
 
       <div className="mx-auto flex w-full max-w-[920px] flex-1 flex-col gap-3 md:gap-4">
         <header className="rounded-2xl border border-[#cfd6ec] bg-card/92 p-3 shadow-soft backdrop-blur-sm md:p-4">
-          <div className="grid grid-cols-1 gap-3 text-sm text-muted">
-            <div className="flex items-center justify-between gap-3">
+          <div className="mx-auto grid w-full max-w-[860px] grid-cols-1 gap-3 text-sm text-muted">
+            <div className="grid justify-items-center gap-2 text-center">
               <strong className="text-base tracking-[0.02em] text-ink">{manifest.title}</strong>
               <span className="rounded-md border border-[#d9dfef] bg-white px-2 py-1 text-xs text-[#3b4e80] md:text-sm">
                 {pages.length ? index + 1 : 0} / {pages.length}
@@ -250,7 +267,7 @@ export function ViewerStudio() {
               <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setZoom((z) => Math.max(0.5, z - 0.15))}>
                 Zoom -
               </button>
-              <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setZoom(1)}>
+              <button className="min-h-10 rounded-lg border border-[#d2d8eb] bg-white px-3 py-2 text-sm text-[#2c3f70]" onClick={() => setZoom(getDefaultZoom())}>
                 Fit
               </button>
               <span className="flex items-center text-xs text-[#4f6091]">Keys: left, right, space</span>
@@ -263,23 +280,15 @@ export function ViewerStudio() {
             className="relative flex min-h-[58vh] items-center justify-center overflow-hidden rounded-2xl border border-[#d2d9ed] bg-surface p-2 shadow-soft sm:p-3 md:min-h-[62vh] md:p-4"
             {...swipeHandlers}
           >
-            <div className="relative w-full">
+            <div className="relative w-full max-w-[860px]">
               <div style={{ aspectRatio: `${frame.width}/${frame.height}` }} className="relative overflow-hidden rounded-xl bg-white">
                 <AnimatePresence mode="wait">
                   {currentPage ? (
-                    <motion.img
-                      key={currentPage.id}
-                      src={withBasePath(currentPage.image.src)}
-                      alt={`Page ${currentPage.order}`}
-                      loading="lazy"
-                      className="h-full w-full object-contain"
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      variants={motionVariants}
-                      transition={{ duration: 0.42, ease: "easeOut" }}
-                      style={{ transform: `scale(${zoom})` }}
-                    />
+                    <motion.div key={currentPage.id} initial="initial" animate="animate" exit="exit" variants={motionVariants} transition={{ duration: 0.42, ease: "easeOut" }} className="h-full w-full">
+                      <div className="h-full w-full" style={{ transform: `scale(${zoom})`, transformOrigin: "center center" }}>
+                        <img src={withBasePath(currentPage.image.src)} alt={`Page ${currentPage.order}`} loading="lazy" className="h-full w-full object-contain" />
+                      </div>
+                    </motion.div>
                   ) : null}
                 </AnimatePresence>
                 <button
